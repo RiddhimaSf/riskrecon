@@ -1,0 +1,16 @@
+group,gate,status,value,limit,detail
+data,unique_member_ids,PASS,0.0,== 0,0 duplicated member_id rows
+data,expected_schema,PASS,0.0,== 0,all required columns present
+data,acceptable_missingness,PASS,0.0,<= 0.01,rows with any null in required fields (last_claim_date may be null: no claims)
+data,claims_completeness,WARN,0.0664,<= 0.05,share of members with claims_completeness < 0.8
+data,date_freshness,PASS,0.0,<= 0.0,dates after the reference snapshot 2025-12-31
+data,duplicate_detection,FAIL,0.0288,<= 0.005,members with >= 8% duplicate claim lines
+data,score_ranges,PASS,0.0,== 0,"scores outside [0.0, 15.0] or null"
+model_output,score_distribution_drift,PASS,0.0178,PSI <= 0.1,DS vs actuarial distribution (no prior snapshot supplied)
+model_output,disagreement_distribution,PASS,0.65,p95|delta| <= 1.0,95th percentile absolute disagreement
+model_output,segment_disagreement,WARN,0.257,<= 0.25,worst segment: completeness_band=<0.70
+model_output,extreme_value_monitoring,PASS,0.0,<= 0.001,scores within 1 point of the cap (15.0)
+reconciliation,pct_beyond_tolerance,PASS,0.0691,<= 0.1,share of members beyond tolerance
+reconciliation,unexplained_disagreement_rate,PASS,0.0093,<= 0.02,UNEXPLAINED flagged members / all members
+reconciliation,stale_snapshot_rate,WARN,0.0696,<= 0.02,snapshot gap >= 30 days
+reconciliation,version_mismatch_rate,WARN,0.0618,<= 0.02,DS version != v2.3

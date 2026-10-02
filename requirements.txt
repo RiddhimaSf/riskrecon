@@ -1,0 +1,13 @@
+numpy>=2.0
+pandas>=2.2
+matplotlib>=3.8
+duckdb>=1.0          # runs the SQL files and the SQL/Python parity tests
+pytest>=8.0
+# case study + notebooks
+reportlab>=4.0
+pillow
+pypdf
+nbformat
+jupyter
+# optional: only for src/copilot.py llm_explanation()
+# anthropic

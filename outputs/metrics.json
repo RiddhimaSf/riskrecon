@@ -1,0 +1,32 @@
+{
+  "headline": {
+    "n_members": 25000,
+    "pct_beyond_tolerance": 0.06908,
+    "n_beyond_tolerance": 1727,
+    "median_delta": 0.0040000000000000036,
+    "mae": 0.21687523999999997,
+    "p95_abs_delta": 0.6499999999999999
+  },
+  "completeness_lift": {
+    "rate_incomplete": 0.2253012048192771,
+    "rate_complete": 0.05796915167095116,
+    "lift": 3.886570672935645,
+    "n_incomplete": 1660
+  },
+  "sensitivity": {
+    "b_ds": 1.9001812690376843,
+    "b_act": 1.0010294707718401,
+    "n_fit": 15868
+  },
+  "recovery_accuracy": 0.8836132020845396,
+  "queue_size": 50,
+  "queue_cause_mix": {
+    "SNAPSHOT_MISMATCH": 45,
+    "UNEXPLAINED": 5
+  },
+  "gates": {
+    "PASS": 10,
+    "WARN": 4,
+    "FAIL": 1
+  }
+}
